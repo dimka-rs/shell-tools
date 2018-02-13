@@ -1,5 +1,5 @@
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-# #apt
+## apt
 alias dq='dpkg-query -W --showformat="\${Installed-Size;10}\t\${Package}\n" | sort -k1,1n'
 alias auu="sudo aptitude update ; sudo aptitude dist-upgrade ; sudo aptitude autoclean ; aptitude search '~N' ; sudo aptitude forget-new; sudo apt autoremove"
 ## shell
