@@ -4,5 +4,5 @@ set hlsearch
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-map <silent> <C-n> :NERDTreeToggle<CR>
+map <silent> <F2> :NERDTreeToggle<CR>
 
