@@ -11,6 +11,8 @@ alias    l='ls -CF'
 alias   ll='ls -alF'
 alias   pa='ps -Af'
 alias   pg='ps auxw|grep'
+alias	up='grep Awake /var/log/pm-suspend.log|tail -n 1'
+
 ## git
 alias gb='git branch -v'
 alias gc='git commit'
@@ -31,3 +33,14 @@ alias t6='sudo arp -d 192.168.1.6 ; telnet 192.168.1.6'
 alias t7='sudo arp -d 192.168.1.7 ; telnet 192.168.1.7'
 alias t8='sudo arp -d 192.168.1.8 ; telnet 192.168.1.8'
 alias t9='sudo arp -d 192.168.1.9 ; telnet 192.168.1.9'
+## ping
+alias p1='sudo arp -d 192.168.1.1 ; ping 192.168.1.1'
+alias p2='sudo arp -d 192.168.1.2 ; ping 192.168.1.2'
+alias p3='sudo arp -d 192.168.1.3 ; ping 192.168.1.3'
+alias p4='sudo arp -d 192.168.1.4 ; ping 192.168.1.4'
+alias p5='sudo arp -d 192.168.1.5 ; ping 192.168.1.5'
+alias p6='sudo arp -d 192.168.1.6 ; ping 192.168.1.6'
+alias p7='sudo arp -d 192.168.1.7 ; ping 192.168.1.7'
+alias p8='sudo arp -d 192.168.1.8 ; ping 192.168.1.8'
+alias p9='sudo arp -d 192.168.1.9 ; ping 192.168.1.9'
+
