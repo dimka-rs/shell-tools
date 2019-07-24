@@ -9,18 +9,15 @@ NOW_S=`date +%s`
 #[ -z "$START" ] && START=`grep Awake /var/log/pm-suspend.log.1|tail -n 1|sed -e 's/:\ .*$//g'`
 
 # if none, try hibernate
-#[ -z "$START" ] && START=`grep 'PM: hibernation exit' /var/log/kern.log| tail -n 1| awk '{print $3}'`
+[ -z "$START" ] && START=`grep -a 'PM: hibernation exit' /var/log/kern.log| tail -n 1| awk '{print $3}'`
 
 # if none, try uptime
 if [ -z "$START" ]; then
-	UPTIME=`uptime|awk '{print $3}'|sed -e 's/,//'`
-	UPTIME_H=`echo $UPTIME|sed -e 's/:.*//'`
-	UPTIME_M=`echo $UPTIME|sed -e 's/^.*://'`
-	UPTIME_S=$(( UPTIME_H * 3600 + UPTIME_M * 60))
-	START_S=$(( NOW_S - UPTIME_S ))
+	START_S=$(date +%s -d `uptime -s|awk '{print $2}'`)
 else
 	START_S=`date +%s -d $START 2>/dev/null`
 fi
+
 
 DIFF=$(( NOW_S - START_S ))
 DIFF_WORK=30600	## 8.5*60*60
