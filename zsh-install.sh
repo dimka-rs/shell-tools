@@ -10,8 +10,11 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 $ git clone --depth 1 https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
 sed -i -e 's/^ZSH_THEME=.*/ZSH_THEME="powerlevel9k\/powerlevel9k"/g' ~/.zshrc
 
-## TODO: add my params
-
+## add my params
+cat << EOF >> ~/.zshrc
+DEFAULT_USER=$USER
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator load ram)
+EOF
 
 ## fonts
 mkdir -p ~/.local/share/fonts/
