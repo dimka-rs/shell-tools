@@ -1,0 +1,13 @@
+#!/bin/sh
+
+APP=$(which flashrom)
+PGM="ch341a_spi"
+
+if [ -z "$*" ]; then
+	$APP -h
+else		
+	CHIP=$($APP -p $PGM |grep chip|sed -e 's/^.* "//' -e 's/" .*$//')
+	echo Found chip: $CHIP
+	echo
+	$APP -V -p $PGM -c $CHIP $*
+fi
