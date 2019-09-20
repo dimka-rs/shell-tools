@@ -17,6 +17,7 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator load ram)
 EOF
 
 ## fonts
+## check also https://github.com/gabrielelana/awesome-terminal-fonts.git
 mkdir -p ~/.local/share/fonts/
 wget https://github.com/powerline/powerline/raw/develop/font/PowerlineSymbols.otf -P  ~/.local/share/fonts/
 mkdir -p ~/.config/fontconfig/conf.d/
