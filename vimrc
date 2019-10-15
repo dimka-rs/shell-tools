@@ -18,3 +18,7 @@ map <silent> <F2> :NERDTreeToggle<CR>
 "noremap <F3> :set invnumber<CR>
 "inoremap <F3> <C-O>:set invnumber<CR>
 map <silent> <F3> :set invnumber<CR>
+" turn highlight off
+map <silent> <F4> :nohl<CR>
+" powerline-fonts for vim-airline
+let g:airline_powerline_fonts = 1
