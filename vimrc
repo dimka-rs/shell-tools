@@ -7,6 +7,10 @@ set tabstop=4
 set number
 set hlsearch
 set colorcolumn=+1
+" display whitespaces
+set list
+set listchars=tab:‣·,trail:␣
+noremap <F5> :set list!<CR>
 "highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set title
 "#set mouse=a
@@ -20,5 +24,5 @@ map <silent> <F2> :NERDTreeToggle<CR>
 map <silent> <F3> :set invnumber<CR>
 " turn highlight off
 map <silent> <F4> :nohl<CR>
-" powerline-fonts for vim-airline
+" powerline-fonts
 let g:airline_powerline_fonts = 1
