@@ -9,11 +9,11 @@ set hlsearch
 set colorcolumn=+1
 " display whitespaces
 set list
-set listchars=tab:‣·,trail:␣
+set listchars=tab:>-,trail:<
 noremap <F5> :set list!<CR>
 "highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set title
-"#set mouse=a
+"set mouse=a
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
