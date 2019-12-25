@@ -1,7 +1,5 @@
-## disable flow control (ctrl+s/ctrl+q)
-stty -ixon
-
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;35m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
 ## apt
 alias dq='dpkg-query -W --showformat="\${Installed-Size;10}\t\${Package}\n" | sort -k1,1n'
 alias auu="sudo aptitude update ; sudo aptitude dist-upgrade ; sudo aptitude autoclean ; aptitude search '~N' ; sudo aptitude forget-new; sudo apt autoremove"
@@ -11,10 +9,11 @@ alias  cdo="cd $OLDPWD"
 alias  cdh='cd ~/'
 alias   la='ls -A'
 alias    l='ls -CF'
-alias   ll='ls -alF'
+alias   ll='ls -alFh'
 alias   pa='ps -Af'
 alias   pg='ps auxw|grep'
-alias	up='grep Awake /var/log/pm-suspend.log|tail -n 1'
+alias   up='grep Awake /var/log/pm-suspend.log|tail -n 1'
+alias   rg='grep -rin --exclude-dir=.svn --color=auto'
 
 ## git
 alias gb='git branch -v'
