@@ -7,10 +7,12 @@ set tabstop=4
 set number
 set hlsearch
 set colorcolumn=+1
+colorscheme desert
 " display whitespaces
 set list
 set listchars=tab:>-,trail:<
 noremap <F5> :set list!<CR>
+noremap <F6> :set expandtab!<CR>
 "highlight ColorColumn ctermbg=lightgrey guibg=lightgrey
 set title
 "set mouse=a
