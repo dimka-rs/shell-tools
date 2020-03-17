@@ -8,6 +8,11 @@ set number
 set hlsearch
 set colorcolumn=+1
 colorscheme desert
+" tabs
+map <C-t><up> :tabr<cr>
+map <C-t><down> :tabl<cr>
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
 " display whitespaces
 set list
 set listchars=tab:>-,trail:<
