@@ -36,3 +36,6 @@ map <silent> <F3> :set invnumber<CR>
 map <silent> <F4> :nohl<CR>
 " powerline-fonts
 let g:airline_powerline_fonts = 1
+" vim-markdown no fold by default
+let g:vim_markdown_folding_disabled = 1
+
