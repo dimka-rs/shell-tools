@@ -43,11 +43,18 @@ exec --no-startup-id nm-applet
 exec "setxkbmap -layout us,ru"
 exec "setxkbmap -option 'grp:shift_caps_switch'"
 
+## remove border for google chrome
+#for_window [class="google-chrome"] border none
+# no, just enable "Use system title bar..." in chrome settings
+
+
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+## switch sinks on mute key
+bindsym XF86AudioMute exec --no-startup-id bash -c '[ `pactl get-default-sink |grep hdmi` ] && pactl set-default-sink 1 || pactl set-default-sink 0' && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
