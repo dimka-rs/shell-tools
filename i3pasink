@@ -1,0 +1,9 @@
+#!/bin/sh
+ICON=/usr/share/mate-media/icons/hicolor/48x48/devices/audio-speaker-left-side.svg
+TOUT=3000
+
+export DISPLAY=:0
+new_sink=$(pactl list sinks short|grep -v `pactl get-default-sink`|awk '{print $2}')
+notify-send -i $ICON -t $TOUT Sink: $new_sink
+pactl set-default-sink $new_sink
+
