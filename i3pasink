@@ -3,7 +3,12 @@ ICON=/usr/share/mate-media/icons/hicolor/48x48/devices/audio-speaker-left-side.s
 TOUT=3000
 
 export DISPLAY=:0
-new_sink=$(pactl list sinks short|grep -v `pactl get-default-sink`|awk '{print $2}')
-notify-send -i $ICON -t $TOUT Sink: $new_sink
-pactl set-default-sink $new_sink
+old_sink=$(pactl get-default-sink)
+new_sink=$(pactl list sinks short | grep -v "$old_sink" | awk '{print $2}')
+if [ -n "$new_sink" ]; then
+    notify-send -i $ICON -t $TOUT "Sink: $new_sink"
+    pactl set-default-sink $new_sink
+else
+    notify-send -i $ICON -t $TOUT "There is only one sink: $old_sink"
+fi
 
